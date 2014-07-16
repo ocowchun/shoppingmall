@@ -5,6 +5,7 @@
 	<% @members.each do|member|%>  
 <li>
 	<%=member.full_name%>  
+	<%= link_to "new order", new_member_order_path(member) %>
 </li>
 
 <%end%>

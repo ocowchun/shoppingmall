@@ -4,6 +4,11 @@ class MembersController < ApplicationController
     @members=Member.all
   end
 
+  def show
+    find_member
+    @orders=@member.orders
+  end
+
   def new
     @member=Member.new
   end
@@ -22,5 +27,9 @@ class MembersController < ApplicationController
 
   def member_params
     params.require(:member).permit(:first_name,:last_name)
+  end
+
+  def find_member
+    @member=Member.find(params[:id])
   end
 end

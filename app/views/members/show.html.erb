@@ -1,0 +1,11 @@
+
+<h2>Member detail</h2>  
+<%= @member.full_name%>
+<h3>orders</h3>  
+<div>
+	<%@orders.each do|order|%>  
+
+<%= order.id%>  
+<%end%>
+
+</div>
